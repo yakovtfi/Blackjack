@@ -13,7 +13,7 @@ def calculate_hand_value(hand: list[dict]) -> int:
     for card in hand:
         rank = card['rank']
         total_value += value_map[rank]
-        if rank == 'Ace':
+        if rank == 'A':
             ace_count += 1
     
     while total_value > 21 and ace_count:
@@ -78,4 +78,5 @@ def run_full_game(deck: list[dict], player: dict, dealer: dict) -> None:
         else:
             player['status'] = 'push'
     else:
+
         player['status'] = 'bust'
